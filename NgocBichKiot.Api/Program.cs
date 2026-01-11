@@ -76,6 +76,12 @@ builder.Services.AddSwaggerGen(setup =>
 });
 QuestPDF.Settings.License = LicenseType.Community;
 builder.Services.AddSwaggerExamplesFromAssemblyOf<Program>();
+builder = WebApplication.CreateBuilder(args);
+
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(8080);
+});
 builder.Services.AddSingleton(configuration);
 builder.Services.AddControllers().AddJsonOptions(x =>
 {
