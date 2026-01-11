@@ -1,0 +1,15 @@
+﻿using Application.Commons;
+using Application.DTO.Records;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Application.Interfaces.Records
+{
+    public interface IRecordService
+    {
+        Task<Pagination<LogListDTO>> GetPaginationAsync(LogPaginationDTO paginationDTO);
+    }
+}
